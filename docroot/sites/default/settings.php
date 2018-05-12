@@ -105,22 +105,20 @@ $config['']['account'] = '';
 // Disable dev modules on all environments by default.
 $config['config_split.config_split.config_dev']['status'] = FALSE;
 
-// If $_ENV['AH_SITE_ENVIRONMENT'], load Acquia settings.
-if(isset($_ENV['AH_SITE_ENVIRONMENT'])) {
-  if (file_exists(__DIR__ . '/settings.acquia.php')) {
-    include __DIR__ . '/settings.acquia.php';
-
-  }
+if(getenv('AMAZEEIO_SITENAME')){
+  $databases['default']['default'] = array(
+    'driver' => 'mysql',
+    'database' => getenv('AMAZEEIO_SITENAME'),
+    'username' => getenv('AMAZEEIO_DB_USERNAME'),
+    'password' => getenv('AMAZEEIO_DB_PASSWORD'),
+    'host' => getenv('AMAZEEIO_DB_HOST'),
+    'port' => getenv('AMAZEEIO_DB_PORT'),
+    'prefix' => '',
+  );
 }
-// If $_SERVER['AH_SITE_ENVIRONMENT'], load Blackmesh settings.
-elseif(isset($_SERVER['AH_SITE_ENVIRONMENT'])) {
-  if (file_exists(__DIR__ . '/settings.blackmesh.php')) {
-    include __DIR__ . '/settings.blackmesh.php';
-  }
-}
-// If drupal-vm settings exist, load them.
-elseif (file_exists(__DIR__ . '/settings.drupalvm.php')) {
-  include __DIR__ . '/settings.drupalvm.php';
+### amazee.io Base URL
+if (getenv('AMAZEEIO_BASE_URL')) {
+  $base_url = getenv('AMAZEEIO_BASE_URL');
 }
 
 // If local settings file exists, load it.
