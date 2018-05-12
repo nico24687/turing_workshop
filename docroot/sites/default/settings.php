@@ -12,7 +12,7 @@ $config_directories = array(
 /**
  * Hash salt used for one-time login links, etc.
  */
-$settings['hash_salt'] = 'ZDKkQxVPRT1754DOHetrX86m_pagksVNvImJZsNlGIoto2V5VRBtQeRCnVNWYRFMBwPenG0GgQ';
+$settings['hash_salt'] = 'SDbqFFA5Ldqj44P1WVJCEGvNjetJsqBp-oxvGywNmfAGizD_Dm5DHdccHpQrFsZwGGvGkphh6A';
 
 /**
  * Access control for update.php script.
@@ -78,12 +78,12 @@ $settings['install_profile'] = 'standard';
 // Trusted host patterns for e3develop and e3stanging. Make sure to add appropriate variations for production domain
 // and any additional version thereof.
 // Additional env specific patterns can be added in the following files (drupalvm, local)
-$settings['trusted_host_patterns'] = array(
-  '^e3develop\.com$',
-  '^.+\.e3develop\.com$',
-  '^e3staging\.com$',
-  '^.+\.e3staging\.com$',
-);
+// $settings['trusted_host_patterns'] = array(
+//   '^e3develop\.com$',
+//   '^.+\.e3develop\.com$',
+//   '^e3staging\.com$',
+//   '^.+\.e3staging\.com$',
+// );
 
 // Set default paths to public, private and temp directories.
 $settings['file_public_path'] = 'sites/default/files';

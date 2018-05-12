@@ -1,6 +1,4 @@
 module:
-  acquia_connector: 0
-  acquia_purge: 0
   action: 0
   address: 0
   admin_toolbar: 0
@@ -78,7 +76,6 @@ module:
   path: 0
   pathauto: 0
   purge: 0
-  purge_drush: 0
   purge_processor_cron: 0
   purge_processor_lateruntime: 0
   purge_queuer_coretags: 0
