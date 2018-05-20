@@ -1,0 +1,5 @@
+name: 'Weather Block'
+type: module
+description: 'Adds weather block'
+core: 8.x
+package: 'Custom'
